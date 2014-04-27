@@ -11,7 +11,7 @@ class Text(pygame.sprite.Sprite):
         self.text_color = text_color
         self.text = text
         self.font = pygame.font.Font(None, height)
-        self.image = self.font.render(self.text, True, self.text_color, None)
+        self.image = self.font.render(self.text, True, self.text_color)
         self.rect = self.image.get_rect()
         self.rect.x = pos_x
         self.rect.y = pos_y
@@ -30,7 +30,7 @@ class Text(pygame.sprite.Sprite):
 
     def __update_rect__(self):
         # render text, store old coordinates and set new text rect to old position
-        self.image = self.font.render(self.text, True, self.text_color, None)
+        self.image = self.font.render(self.text, True, self.text_color)
         old_rect_y = self.rect.y
         old_rect_x = self.rect.x
         self.rect = self.image.get_rect()
